@@ -64,7 +64,6 @@ public class PuzzleArr {
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
 				if (++number == 16) {
-					System.out.println("답입니다.");
 					return true;
 				}
 				if (!(puzzle[i][j].equals(String.valueOf(number)))) {
