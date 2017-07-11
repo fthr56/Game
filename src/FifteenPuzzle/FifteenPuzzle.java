@@ -13,6 +13,7 @@ public class FifteenPuzzle {
 		System.out.println("15 퍼즐 입니다.");
 		PuzzleArr puzzle = new PuzzleArr();
 		holeNumber = puzzle.settingPuzzle();
+		// holeNumber = puzzle.setRandom();
 		puzzle.printPuzzle();
 
 		while (!puzzle.checkSolution()) {
@@ -23,7 +24,7 @@ public class FifteenPuzzle {
 				scanner.close();
 				return;
 			}
-			holeNumber = Move.moving(puzzle.puzzle, holeNumber, command);
+			holeNumber = Move.moving(puzzle.board, holeNumber, command);
 			puzzle.printPuzzle();
 		}
 		System.out.printf("%d번만에 완성 하셨습니다.\nThank you for playing!!", count);

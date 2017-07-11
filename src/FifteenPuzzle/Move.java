@@ -1,12 +1,12 @@
 package FifteenPuzzle;
 
 public class Move {
-	public static int moving(String[][] puzzle, int index, String key) {
+	public static int moving(String[][] board, int index, String key) {
 		String temp;
-		int i = (index - 1) / 4;
+		int i = (index - 1) / 4;			//인덱스 값을 이용하여 i,j값을 알아냄
 		int j = (index - 1) % 4;
 
-		temp = puzzle[i][j];
+		temp = board[i][j];
 
 		switch (key) {
 
@@ -16,8 +16,8 @@ public class Move {
 				System.out.println("그렇겐 이동 할 수 없습니다.");
 				break;
 			}
-			puzzle[i][j] = puzzle[i + 1][j];
-			puzzle[i + 1][j] = temp;
+			board[i][j] = board[i + 1][j];
+			board[i + 1][j] = temp;
 			return index + 4;
 
 		// 왼쪽으로 이동
@@ -26,8 +26,8 @@ public class Move {
 				System.out.println("그렇겐 이동 할 수 없습니다.");
 				break;
 			}
-			puzzle[i][j] = puzzle[i][j + 1];
-			puzzle[i][j + 1] = temp;
+			board[i][j] = board[i][j + 1];
+			board[i][j + 1] = temp;
 			return index + 1;
 
 		// 아래쪽으로 이동
@@ -36,8 +36,8 @@ public class Move {
 				System.out.println("그렇겐 이동 할 수 없습니다.");
 				break;
 			}
-			puzzle[i][j] = puzzle[i - 1][j];
-			puzzle[i - 1][j] = temp;
+			board[i][j] = board[i - 1][j];
+			board[i - 1][j] = temp;
 			return index - 4;
 
 		// 오른쪽으로 이동
@@ -46,8 +46,8 @@ public class Move {
 				System.out.println("그렇겐 이동 할 수 없습니다.");
 				break;
 			}
-			puzzle[i][j] = puzzle[i][j - 1];
-			puzzle[i][j - 1] = temp;
+			board[i][j] = board[i][j - 1];
+			board[i][j - 1] = temp;
 			return index - 1;
 		default:
 			System.out.println("잘못 입력 하셨습니다.");
